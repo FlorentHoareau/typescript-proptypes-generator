@@ -61,7 +61,7 @@ function plugin(
 	return {
 		visitor: {
 			Program: {
-				enter(visitPath) {
+				enter(visitPath: any) {
 					const relativeInputFilePath = path.relative(outputFilePath, inputFilePath); 
 					visitPath.addComment(
 						'leading',

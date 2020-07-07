@@ -5,4 +5,5 @@ export type TestType = {
         numericField: number;
         booleanField: boolean;
     };
+    optionalNumberField?: number;
 }

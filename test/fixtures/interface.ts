@@ -5,4 +5,5 @@ export interface TestInterface {
         numericField: number;
         booleanField: boolean;
     };
+    optionalNumberField?: number;
 }

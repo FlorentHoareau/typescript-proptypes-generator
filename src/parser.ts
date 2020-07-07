@@ -190,6 +190,9 @@ export function parseFromProgram(
 				: t.anyNode();
 		} else {
 			parsedType = checkType(type, typeStack, symbol.getName());
+			if (declaration && ts.isPropertySignature(declaration) && declaration.questionToken) {
+                parsedType = t.unionNode([t.undefinedNode(), parsedType]);
+            }
 		}
 
 		return t.propTypeNode(symbol.getName(), getDocumentation(symbol), parsedType);
